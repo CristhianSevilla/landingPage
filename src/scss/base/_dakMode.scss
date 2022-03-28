@@ -1,0 +1,57 @@
+@use 'base/mixins' as m;
+@use 'base/variables' as v;
+.dark-mode {
+    background-color: darken(v.$grisOscuro, $amount: 10);
+    .wave {
+        path {
+            fill: darken(v.$grisOscuro, $amount: 10);
+        }
+    }
+    .presentacion,
+    .servicio {
+        background-color: v.$grisO;
+    }
+    .problema {
+        span {
+            color: v.$blanco;
+        }
+    }
+    .portafolio {
+        background-color: darken(v.$grisOscuro, $amount: 10);
+        p {
+            color: v.$blanco;
+        }
+        .widget_portafolio {
+            p {
+                color: v.$negro;
+            }
+        }
+    }
+    .wave__footer {
+        background-color: darken(v.$grisOscuro, $amount: 10);
+    }
+    .modo-nocturno {
+        background-color: v.$gris;
+        border: 1px solid v.$gris;
+        img {
+            filter: unset;
+        }
+    }
+}
+
+.modo-nocturno {
+    width: 6rem;
+    background-color: v.$grisOscuro;
+    border: 1px solid v.$gris;
+    padding: 1rem;
+    border-radius: 50%;
+    img {
+        filter: invert(100%);
+    }
+}
+
+.contenedor-btn-nocturno {
+    position: fixed;
+    bottom: 25px;
+    right: 20px;
+}

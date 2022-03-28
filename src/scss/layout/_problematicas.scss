@@ -1,0 +1,44 @@
+@use 'base/mixins' as m;
+@use 'base/variables' as v;
+.problematicas {
+    margin-top: 6rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    @include m.tablet {
+        @include m.grid(2, 0rem)
+    }
+    img {
+        width: 55%;
+        margin: 0 auto 2.5rem auto;
+    }
+    ul {
+        @include m.resetearLista;
+        li {
+            display: flex;
+            align-items: center;
+            margin: 1rem 0;
+        }
+    }
+}
+
+.problema_icono {
+    padding-right: 1rem;
+}
+
+.problema {
+    span {
+        font-size: 2rem;
+        font-weight: bold;
+    }
+}
+
+.problematicas_animacion {
+    @include m.tablet {
+        animation: moverArriba .8s ease-in;
+        img,
+        li {
+            animation: moverIzquierda .8s ease-in;
+        }
+    }
+}

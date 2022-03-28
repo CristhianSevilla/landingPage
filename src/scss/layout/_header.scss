@@ -1,0 +1,166 @@
+@use 'base/mixins' as m;
+@use 'base/variables' as v;
+.header {
+    background: #f12711;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #f5af19, #f12711);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #f5af19, #f12711);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    height: auto;
+    padding: 2rem;
+}
+
+.navegacion {
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0rem;
+    z-index: 100;
+    padding-right: 5rem;
+    background: #f12711;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #f5af19, #f12711);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #f5af19, #f12711);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.header_menu {
+    display: flex;
+    z-index: 10;
+    align-items: center;
+    gap: 1rem;
+    padding: 2rem 0;
+    font-size: 2.5rem;
+    padding-left: 3rem;
+    justify-content: flex-start;
+    animation: moverIzquierda 1s ease-in;
+}
+
+.navegacion__enlaces {
+    background: #0575E6;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #021B79, #0575E6);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #021B79, #0575E6);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 100%;
+    top: 0%;
+    left: 0%;
+    padding-top: 6rem;
+    transition: all 1s ease;
+    width: 100%;
+}
+
+.navegacion_enlace {
+    display: inline-block;
+    font-size: 2.5rem;
+    padding: 1.5rem 0;
+    width: 100%;
+    text-align: center;
+    @include m.tablet {
+        text-align: left;
+        padding: 2rem 0rem 2rem 15rem;
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+.uno {
+    -webkit-clip-path: circle(0% at 0 0);
+    clip-path: circle(0% at 0 0);
+}
+
+.dos {
+    -webkit-clip-path: circle(73% at 0 0);
+    clip-path: circle(78% at 0 0);
+    @include m.desktop {
+        -webkit-clip-path: circle(73% at 0 0);
+        clip-path: circle(58% at 0 0);
+    }
+}
+
+.contenido__imagen {
+    margin-top: 1.5rem;
+    animation: moverDerecha 1s ease-in;
+    @include m.tablet {
+        margin-top: 0rem;
+    }
+    @include m.desktop {
+        animation: moverArriba 1s ease-in;
+        margin: 0%;
+    }
+}
+
+.header__contenido {
+    display: flex;
+    flex-direction: column-reverse;
+    margin-top: 3rem;
+}
+
+.contenido__textos {
+    text-align: center;
+    color: v.$blanco;
+    text-transform: capitalize;
+    h1 {
+        font-size: 3.5rem;
+        animation: moverIzquierda 1s ease-in;
+    }
+    h2 {
+        font-size: 2.3rem;
+        margin-bottom: 1;
+        animation: moverDerecha 1s ease-in;
+    }
+}
+
+.contenido_contacto {
+    display: inline-block;
+    animation: moverArriba 1s ease-in;
+    margin-bottom: 2.5rem;
+}
+
+@include m.desktop {
+    .header__contenido {
+        display: grid;
+        margin-top: 7rem;
+        @include m.grid(2, 0rem);
+        h1 {
+            font-size: 5.5rem;
+            line-height: 1.5;
+            text-align: left;
+        }
+        h2 {
+            font-size: 3.6rem;
+            line-height: 1.2;
+            margin-top: 2.3rem;
+            text-align: left;
+        }
+    }
+    .contenido__textos {
+        width: 100%;
+        text-align: left;
+    }
+}
+
+.wave {
+    path {
+        fill: v.$blanco;
+    }
+    height: 10rem;
+    width: 100%;
+    background: #f12711;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #f5af19, #f12711);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #f5af19, #f12711);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}

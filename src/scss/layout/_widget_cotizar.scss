@@ -1,0 +1,38 @@
+@use 'base/mixins' as m;
+@use 'base/variables' as v;
+.widget_cotizar {
+    margin-top: 6rem;
+    background-color: v.$azul;
+    padding: 2.5rem 0;
+    &_texto {
+        display: flex;
+        align-items: center;
+        margin: 0 auto;
+        p {
+            color: v.$blanco;
+            font-size: 2.3rem;
+            text-align: center;
+        }
+        .problema_icono {
+            padding-right: .1rem;
+            @include m.tablet {
+                padding-right: 1rem;
+            }
+        }
+    }
+}
+
+.widget_cotizar_contenedor {
+    @include m.tablet {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        a {
+            display: flex;
+            align-items: center;
+            color: v.$anaranjado;
+            font-weight: bold;
+            border: 2px solid v.$anaranjado;
+        }
+    }
+}

@@ -1,0 +1,76 @@
+@use 'base/mixins' as m;
+@use 'base/variables' as v;
+.footer {
+    background-color: v.$azul;
+    padding-bottom: 3rem;
+    h3 {
+        color: v.$anaranjado;
+        margin: 0 0 2rem 0;
+        font-size: 2.2rem;
+        text-transform: uppercase;
+        text-align: left;
+    }
+    p,
+    a {
+        color: v.$blanco;
+        font-size: 2rem;
+        padding: 1rem 0;
+        margin: 0;
+    }
+    a:hover {
+        text-decoration: underline;
+    }
+}
+
+.contenedor__footer {
+    @include m.tablet {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+}
+
+.footer_seccion {
+    margin-bottom: 2.5rem;
+    @include m.tablet {
+        width: 49.4%;
+    }
+    .footer_info {
+        display: flex;
+        align-items: center;
+        padding-left: 4rem;
+        p,
+        a {
+            padding-left: .5rem;
+            width: 100%;
+        }
+    }
+}
+
+.footer_pie {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    @include m.duo {
+        flex-direction: row;
+        text-align: start;
+    }
+    p,
+    a {
+        color: v.$anaranjado;
+        font-size: 1.4rem;
+        text-transform: uppercase;
+        padding: .3rem 0;
+        @include m.duo {
+            margin-right: 3rem;
+        }
+    }
+}
+
+.wave__footer {
+    background-color: v.$blanco;
+    fill: v.$azul;
+    height: 13rem;
+    width: 100%;
+}

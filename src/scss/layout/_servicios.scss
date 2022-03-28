@@ -1,0 +1,65 @@
+@use 'base/mixins' as m;
+@use 'base/variables' as v;
+.servicios {
+    margin-top: 6rem;
+    h2 {
+        color: v.$anaranjado;
+        text-transform: uppercase;
+        @include m.tablet {
+            margin-bottom: 1.5rem;
+        }
+    }
+}
+
+.contenedor__Servicios {
+    @include m.tablet {
+        @include m.grid(3, 3rem);
+    }
+}
+
+.servicio {
+    background-color: v.$gris;
+    padding: 3rem;
+    margin-top: 3rem;
+    border-radius: 1rem;
+    h3 {
+        margin-bottom: 0;
+        &:before {
+            content: '';
+            display: block;
+            width: 12rem;
+            height: 12rem;
+            background-size: 12rem;
+            background-repeat: no-repeat;
+            background-position: center center;
+            margin: 1rem auto 2rem auto;
+        }
+    }
+}
+
+.paginas {
+    h3:before {
+        background-image: url(../img/pagina.webp);
+    }
+}
+
+.ecomerce {
+    h3:before {
+        background-image: url(../img/ecomerce.webp);
+    }
+}
+
+.marketing {
+    h3:before {
+        background-image: url(../img/marketing.webp);
+    }
+}
+
+.s_animacion__Abajo {
+    @include m.tablet {
+        h3,
+        h3:before {
+            animation: moverAbajo .8s ease-in;
+        }
+    }
+}

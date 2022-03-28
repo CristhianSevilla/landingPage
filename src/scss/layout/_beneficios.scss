@@ -1,0 +1,115 @@
+@use 'base/mixins' as m;
+@use 'base/variables' as v;
+.beneficios {
+    background-color: v.$azul;
+    margin-top: 6rem;
+    padding: 5rem 0 3rem 0;
+}
+
+.beneficios_encabezado {
+    h2 {
+        color: v.$blanco;
+        margin-bottom: 1.5rem;
+        text-transform: uppercase;
+        @include m.tablet {
+            margin-bottom: 4rem;
+        }
+    }
+    p {
+        color: v.$blanco;
+        text-align: center;
+        margin-bottom: 2rem;
+        font-size: 2.5rem;
+        @include m.tablet {
+            margin-bottom: 5rem;
+        }
+    }
+}
+
+.beneficios_contenedor {
+    @include m.galaxyFold {
+        display: block;
+    }
+    @include m.telefono {
+        @include m.grid(2, 1rem);
+    }
+    @include m.tablet {
+        @include m.grid(3, 3rem);
+    }
+}
+
+.beneficio {
+    border: 1px solid v.$anaranjado;
+    border-radius: 1rem;
+    padding: 1rem;
+    margin: 1.5rem;
+    @include m.telefono {
+        margin: .5rem;
+    }
+    @include m.tablet {
+        padding: 3rem;
+    }
+    p {
+        color: v.$blanco;
+        text-align: center;
+        &:before {
+            content: '';
+            display: block;
+            width: 12rem;
+            height: 12rem;
+            background-size: 12rem;
+            background-repeat: no-repeat;
+            background-position: center center;
+            margin: 1rem auto 2rem auto;
+            @include m.tablet {
+                width: 13rem;
+                height: 13rem;
+                background-size: 13rem;
+            }
+        }
+    }
+}
+
+.intuitiva {
+    p:before {
+        background-image: url(../img/feliz.webp);
+    }
+}
+
+.diseño {
+    p:before {
+        background-image: url(../img/diseño.webp);
+    }
+}
+
+.responsiva {
+    p:before {
+        background-image: url(../img/responsivo.webp);
+    }
+}
+
+.chat {
+    p:before {
+        background-image: url(../img/chat.webp);
+    }
+}
+
+.redes {
+    p:before {
+        background-image: url(../img/redes.webp);
+    }
+}
+
+.trafico {
+    p:before {
+        background-image: url(../img/grafica.webp);
+    }
+}
+
+.b_animacion__Abajo {
+    @include m.tablet {
+        p:before {
+            animation: moverAbajo .8s ease-in;
+        }
+    }
+}

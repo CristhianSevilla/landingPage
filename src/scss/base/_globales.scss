@@ -1,0 +1,126 @@
+@use 'variables' as v;
+@use 'mixins' as m;
+html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+body {
+    font-family: v.$fuente_principal;
+}
+
+a {
+    text-decoration: none;
+    color: v.$blanco;
+    font-size: 2.8rem;
+    text-transform: capitalize;
+    margin: 0;
+}
+
+.correo {
+    text-transform: lowercase;
+}
+
+img {
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+h1,
+h2,
+h3 {
+    margin: 0 0 5rem 0;
+    text-align: center;
+}
+
+h2 {
+    font-size: 2.8rem;
+    @include m.tablet {
+        font-size: 3.5rem;
+    }
+}
+
+h3 {
+    font-size: 2.5rem;
+}
+
+p {
+    font-size: 2rem;
+}
+
+.contenedor {
+    width: 90%;
+    max-width: 120rem;
+    margin: 0 auto;
+}
+
+.boton {
+    display: block;
+    font-size: 2.5rem;
+    border: 2px solid v.$blanco;
+    border-radius: .5rem;
+    padding: 1rem 3rem;
+    align-items: center;
+    text-align: center;
+}
+
+.boton_naranja {
+    color: v.$anaranjado;
+    border: 2px solid v.$anaranjado;
+    font-weight: bold;
+}
+
+
+/*Frames Animaciones */
+
+@keyframes moverIzquierda {
+    0% {
+        opacity: 0;
+        transform: translate(-100px);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
+@keyframes moverDerecha {
+    0% {
+        opacity: 0;
+        transform: translate(100px);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
+@keyframes moverArriba {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
+@keyframes moverAbajo {
+    0% {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(0);
+    }
+}
